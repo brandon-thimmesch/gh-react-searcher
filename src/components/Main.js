@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Search from '../Search/Search';
+import BlankMain from './BlankMain';
 
 const Main = () => (
     <main>
         <Switch>
-            <Route exact path='/' component={Search}/>
+            <Route exact path='/' component={BlankMain}/>
         </Switch>
     </main>
 )
