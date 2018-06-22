@@ -4,7 +4,13 @@ import Search from './Search';
 const Header = () => (
     <header>
         <nav class="navbar navbar-dark bg-primary">
-            <Search />
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <Search />
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 )

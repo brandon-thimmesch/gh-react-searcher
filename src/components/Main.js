@@ -4,9 +4,19 @@ import BlankMain from './BlankMain';
 
 const Main = () => (
     <main>
-        <Switch>
-            <Route exact path='/' component={BlankMain}/>
-        </Switch>
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <p>Options side for filtering.</p>
+                </div>
+
+                <div className="col">
+                <Switch>
+                    <Route exact path='/' component={BlankMain}/>
+                </Switch>
+                </div>
+            </div>
+        </div>
     </main>
 )
 
