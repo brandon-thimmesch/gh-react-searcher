@@ -7,6 +7,7 @@ class CommitInfo extends React.Component {
     }
 
     componentDidMount() {
+        // Probably a better way to do this, was surprised repo information wasn't included in commit data
         fetch(`https://api.github.com/repos/${this.props.params.user}/${this.props.params.repo}`)
         .then(response => response.json())
         .then(repo => {
@@ -29,7 +30,7 @@ class CommitInfo extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <div className="card repocard">LOADING...</div>
+                                <div className="card repo-info">LOADING...</div>
                             </div>
                         </div>
                     </div>
@@ -40,7 +41,7 @@ class CommitInfo extends React.Component {
         const repo = this.state.repo;
         const commits = this.state.commits;
         const commitDetails = commits.map(item =>
-            <li className="list-group-item">
+            <li key={item.sha} className="list-group-item">
                 <p>{item.commit.author.name}</p>
                 <a href={item.html_url}>
                     <p>{item.commit.message}</p>
@@ -54,8 +55,9 @@ class CommitInfo extends React.Component {
                     <div className="row">
                         <div className="col">
                             <a href={repo.html_url}><img className="card-img-top repo-img w-25" src={repo.owner.avatar_url} alt="A Github owner avatar"/></a>
-                            <a href={repo.html_url}><h5 className="card-title">{repo.full_name}</h5></a>
+                            <a href={repo.html_url}><h1 className="card-title">{repo.full_name}</h1></a>
                             <p className="card-text">{repo.description}</p>
+                            <h2>Latest Commits</h2>
                             <ul className="list-group">
                                 {commitDetails}
                             </ul>
