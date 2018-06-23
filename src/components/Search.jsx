@@ -9,7 +9,7 @@ class Search extends React.Component {
 
     _handleSubmit(e) {
         e.preventDefault();
-        history.push(`/search/repositories/${this.refs.userInput.value}`)
+        history.push(`/search/repositories/${this.refs.userInput.value}/${this.refs.sortBy.value}/${this.refs.order.value}`)
     }
 
     render() {
@@ -22,6 +22,16 @@ class Search extends React.Component {
                             <form onSubmit={this._handleSubmit}>
                                 <div className="input-group">
                                     <input ref="userInput" className="form-control" type="text" />
+                                    <select className="custom-select" ref="sortBy">
+                                        <option value="default">Sort By...</option>
+                                        <option value="stars">Stars</option>
+                                        <option value="forks">Forks</option>
+                                        <option value="updated">Updated</option>
+                                    </select>
+                                    <select className="custom-select" ref="order">
+                                        <option value="desc">Descending</option>
+                                        <option value="asc">Ascending</option>
+                                    </select>
                                     <button className="btn btn-primary">Search</button>
                                 </div>
                             </form>

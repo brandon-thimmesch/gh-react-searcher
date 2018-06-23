@@ -13,7 +13,7 @@ const routes = (
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Search}/>
-            <Route path="/search/repositories/:searchQuery" component={Results}/>
+            <Route path="/search/repositories/:searchQuery/:sortBy/:order" component={Results}/>
             <Route path="/repository/:user/:repo/commits" component={CommitInfo}/>
         </Route>
     </Router>
