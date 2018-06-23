@@ -1,14 +1,20 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import './index.css';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import Search from './components/Search';
+import Results from './components/Results';
 
-render((
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-), document.getElementById('root'));
+const routes = (
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Search}/>
+            <Route path="/search/repositories/:searchQuery" component={Results}/>
+        </Route>
+    </Router>
+);
 
-registerServiceWorker();
+ReactDOM.render(routes, document.getElementById('root'));
