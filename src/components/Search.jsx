@@ -22,6 +22,9 @@ class Search extends React.Component {
                             <form onSubmit={this._handleSubmit}>
                                 <div className="input-group">
                                     <input ref="userInput" className="form-control" type="text" />
+                                    <button className="btn btn-primary">Search</button>
+                                </div>
+                                <div className="input-group mt-3">
                                     <select className="custom-select" ref="sortBy">
                                         <option value="default">Sort By...</option>
                                         <option value="stars">Stars</option>
@@ -32,7 +35,6 @@ class Search extends React.Component {
                                         <option value="desc">Descending</option>
                                         <option value="asc">Ascending</option>
                                     </select>
-                                    <button className="btn btn-primary">Search</button>
                                 </div>
                             </form>
                         </div>

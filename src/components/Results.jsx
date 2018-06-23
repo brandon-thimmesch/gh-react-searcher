@@ -9,7 +9,7 @@ class Results extends React.Component {
 
     componentDidMount() {
         const searchParams = this.props.params;
-        
+
         fetch(`https://api.github.com/search/repositories?q=${searchParams.searchQuery}&sort=${searchParams.sortBy}&order=${searchParams.order}`)
         .then(response => response.json())
         .then(repos => {
