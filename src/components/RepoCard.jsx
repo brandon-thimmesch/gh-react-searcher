@@ -5,6 +5,7 @@ class RepoCard extends React.Component {
     constructor(props) {
         super(props);
         this._handleClickCommits = this._handleClickCommits.bind(this);
+        this._handleClickGraph = this._handleClickGraph.bind(this);
         this.state = {};
     }
 
@@ -19,17 +20,22 @@ class RepoCard extends React.Component {
         history.push(`/repository/${this.state.repo.owner.login}/${this.state.repo.name}/commits`)
     }
 
+    _handleClickGraph(e) {
+        e.preventDefault();
+        history.push('/contributions');
+    }
+
     render() {
         if (!this.state.repo) {
             return (
-                <div className="card repocard">LOADING...</div>
+                <div className="card repo-card">LOADING...</div>
             );
         }
 
         const repo = this.state.repo;
 
         return (
-            <div className="card repocard">
+            <div className="card repo-card">
                 <a href={repo.html_url}><img className="card-img-top repo-img" src={repo.owner.avatar_url} alt="A Github owner avatar"/></a>
                 <div className="card-body">
                     <a href={repo.html_url}><h5 className="card-title">{repo.full_name}</h5></a>

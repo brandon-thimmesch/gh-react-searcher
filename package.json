@@ -5,6 +5,7 @@
   "author": "Brandon Thimmesch",
   "dependencies": {
     "react": "^16.4.1",
+    "react-c3js": "^0.1.20",
     "react-dom": "^16.4.1",
     "react-router": "^3.0.2",
     "react-scripts": "1.1.4"

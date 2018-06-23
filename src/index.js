@@ -8,6 +8,7 @@ import App from './components/App';
 import Search from './components/Search';
 import Results from './components/Results';
 import CommitInfo from './components/CommitInfo';
+import Contributions from './components/Contributions';
 
 const routes = (
     <Router history={browserHistory}>
@@ -15,6 +16,7 @@ const routes = (
             <IndexRoute component={Search}/>
             <Route path="/search/repositories/:searchQuery/:sortBy/:order" component={Results}/>
             <Route path="/repository/:user/:repo/commits" component={CommitInfo}/>
+            <Route path="/contributions" component={Contributions}/>
         </Route>
     </Router>
 );
