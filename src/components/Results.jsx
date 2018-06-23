@@ -1,6 +1,5 @@
 import React from 'react';
 import RepoCard from './RepoCard';
-// import { Link } from 'react-router';
 
 class Results extends React.Component {
     constructor() {
@@ -28,9 +27,9 @@ class Results extends React.Component {
 
         const repos = this.state.repos.items;
         const repoCards = repos.map(repo =>
-            <div className="row">
+            <div className="row" key={repo.id}>
                 <div className="col-md-4 col-md-offset-8">
-                    <RepoCard key={repo.id} value={repo} />
+                    <RepoCard value={repo} />
                 </div>
             </div>
         );
