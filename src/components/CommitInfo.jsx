@@ -43,7 +43,9 @@ class CommitInfo extends React.Component {
         const commitDetails = commits.map(item =>
             <li className="list-group-item">
                 <p>{item.commit.author.name}</p>
-                <p>{item.commit.message}</p>
+                <a href={item.html_url}>
+                    <p>{item.commit.message}</p>
+                </a>
             </li>
         );
 
