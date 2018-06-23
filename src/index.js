@@ -14,7 +14,7 @@ const routes = (
         <Route path="/" component={App}>
             <IndexRoute component={Search}/>
             <Route path="/search/repositories/:searchQuery" component={Results}/>
-            <Route path="/repository/:user/:repo/commits" component={CommitInfo} />
+            <Route path="/repository/:user/:repo/commits" component={CommitInfo}/>
         </Route>
     </Router>
 );
