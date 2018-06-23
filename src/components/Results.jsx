@@ -27,18 +27,18 @@ class Results extends React.Component {
         }
 
         const repos = this.state.repos.items;
-        const repoCards = repos.map(repo => <RepoCard key={repo.id} value={repo.full_name} />);
+        const repoCards = repos.map(repo =>
+            <div className="row">
+                <div className="col-md-4 col-md-offset-8">
+                    <RepoCard key={repo.id} value={repo} />
+                </div>
+            </div>
+        );
 
         return (
             <div className="results-page">
                 <div className="container">
-                    <div className="row">
-                        <div className="col">
-                            <ul>
-                                {repoCards}
-                            </ul>
-                        </div>
-                    </div>
+                    {repoCards}
                 </div>
             </div>
         );
