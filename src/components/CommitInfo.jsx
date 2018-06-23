@@ -42,11 +42,10 @@ class CommitInfo extends React.Component {
         const commits = this.state.commits;
         const commitDetails = commits.map(item =>
             <li className="list-group-item">
-                <a href={item.author.html_url}><img className="commit-author-img" src={item.author.avatar_url} alt="Contributing author avatar"/></a>
-                <p>{item.author.login} Committed: {item.commit.author.date}</p>
+                <p>{item.commit.author.name}</p>
                 <p>{item.commit.message}</p>
             </li>
-        )
+        );
 
         return(
             <div className="repo-info">
