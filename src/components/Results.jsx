@@ -23,7 +23,17 @@ class Results extends React.Component {
     render() {
         if (!this.state.repos) {
             return (
-                <div className="results-page">LOADING...</div>
+                <div className="results-page">
+                    <div className="jumbotron">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    <h1>LOADING...</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             );
         }
 

@@ -22,7 +22,7 @@ class RepoCard extends React.Component {
 
     _handleClickGraph(e) {
         e.preventDefault();
-        history.push('/contributions');
+        history.push(`/contributions/${this.state.repo.owner.login}/${this.state.repo.name}`);
     }
 
     render() {
