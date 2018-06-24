@@ -52,15 +52,6 @@ class Search extends React.Component {
                                     </select>
                                 </div>
                             </form>
-
-                            <form onSubmit={this._handleAddTopicFilter}>
-                                <div className="input-group mt-3">
-                                    <input type="text" className="form-control" ref="topicItem" placeholder="Add a topic to filter by..." aria-label="Add a topic to filter by..."/>
-                                    <div className="input-group-append">
-                                        <button className="btn btn-success" type="button">+</button>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>

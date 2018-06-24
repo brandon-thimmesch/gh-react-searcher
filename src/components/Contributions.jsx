@@ -17,21 +17,31 @@ class Contributions extends React.Component {
                     ['others']
                 ]
             };
+            let options = {
+                labels: true,
+                axisLabel: {
+                    x: 'Days Ago',
+                    y: '# of Contributions'
+                },
+            }
 
-            if (data.all.length > 7) {
-                for (let i = data.all.length - 7; i < data.all.length; i++) {
-                    contributions.columns[0].push(data.owner[i]);
-                    contributions.columns[1].push(data.all[i] - data.owner[i]);
-                }
-            } else {
-                for (let i = 0; i < data.all.length; i++) {
-                    contributions.columns[0].push(data.owner[i]);
-                    contributions.columns[1].push(data.all[i] - data.owner[i]);
+            if (data.all) {
+                if (data.all.length > 7) {
+                    for (let i = data.all.length - 7; i < data.all.length; i++) {
+                        contributions.columns[0].push(data.owner[i]);
+                        contributions.columns[1].push(data.all[i] - data.owner[i]);
+                    }
+                } else {
+                    for (let i = 0; i < data.all.length; i++) {
+                        contributions.columns[0].push(data.owner[i]);
+                        contributions.columns[1].push(data.all[i] - data.owner[i]);
+                    }
                 }
             }
 
             this.setState({
-                contributions: contributions
+                contributions: contributions,
+                options: options
             });
         });
     }
@@ -62,7 +72,7 @@ class Contributions extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <RepoChart data={this.state.contributions}/>
+                        <RepoChart data={this.state.contributions} options={this.state.options}/>
                     </div>
                 </div>
             </div>
