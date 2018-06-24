@@ -67,7 +67,7 @@ class Contributions extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h1 className="text-center mb-4">Contributions For <strong>{this.props.params.repo}</strong></h1>
+                        <h1 className="text-center mb-4">Contributions For <strong>{this.props.params.owner}/{this.props.params.repo}</strong></h1>
                     </div>
                 </div>
                 <div className="row">

@@ -5,7 +5,7 @@ import 'c3/c3.css';
 class RepoChart extends React.Component {
     render(){
         return(
-            <C3Chart data={this.props.data} />
+            <C3Chart data={this.props.data} options={this.props.options} />
         )
     }
 }
