@@ -15,15 +15,13 @@ class Contributions extends React.Component {
                 columns: [
                     ['owner'],
                     ['others']
-                ]
-            };
-            let options = {
+                ],
                 labels: true,
                 axisLabel: {
                     x: 'Days Ago',
                     y: '# of Contributions'
-                },
-            }
+                }
+            };
 
             if (data.all) {
                 if (data.all.length > 7) {
@@ -40,8 +38,7 @@ class Contributions extends React.Component {
             }
 
             this.setState({
-                contributions: contributions,
-                options: options
+                contributions: contributions
             });
         });
     }
@@ -72,7 +69,7 @@ class Contributions extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <RepoChart data={this.state.contributions} options={this.state.options}/>
+                        <RepoChart data={this.state.contributions}/>
                     </div>
                 </div>
             </div>

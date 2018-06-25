@@ -40,14 +40,23 @@ class CommitInfo extends React.Component {
 
         const repo = this.state.repo;
         const commits = this.state.commits;
-        const commitDetails = commits.map(item =>
-            <li key={item.sha} className="list-group-item">
-                <p>{item.commit.author.name}</p>
-                <a href={item.html_url}>
-                    <p>{item.commit.message}</p>
-                </a>
-            </li>
-        );
+        let commitDetails;
+
+        if (commits.length !== undefined) {
+            commitDetails = commits.map(item =>
+                <li key={item.sha} className="list-group-item">
+                    <p>{item.commit.author.name}</p>
+                    <a href={item.html_url}>
+                        <p>{item.commit.message}</p>
+                    </a>
+                </li>
+            );
+        } else {
+            commitDetails =
+                <li key="noCommits">
+                    <p>{commits.message}</p>
+                </li>
+        }
 
         return(
             <div className="repo-info">
