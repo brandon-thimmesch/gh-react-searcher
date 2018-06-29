@@ -41,7 +41,7 @@ class RepoCard extends React.Component {
                     <a href={repo.html_url}><h5 className="card-title">{repo.full_name}</h5></a>
                     <p className="card-text">{repo.description}</p>
                     <button className="btn btn-primary" onClick={this._handleClickCommits}>View Commit Details</button>
-                    <button className="btn btn-success mt-2" onClick={this._handleClickGraph}>View Contribution Graph</button>
+                    {/* <button className="btn btn-success mt-2" onClick={this._handleClickGraph}>View Contribution Graph</button> */}
                 </div>
             </div>
         );
